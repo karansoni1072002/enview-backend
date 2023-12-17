@@ -61,7 +61,7 @@ function evaluateRule() {
 function checkUniqueAlertTimeStamp() {
     const currentTime = Date.now();
     for (const [key, timestamp] of uniqueAlerts.entries()) {
-        if (currentTime - timestamp >= 30 * 1000) {
+        if (currentTime - timestamp >= 5 * 60 * 1000) {
             console.log(`Removing alert key: ${key}`);
             console.log('deleted ', key)
             uniqueAlerts.delete(key);
